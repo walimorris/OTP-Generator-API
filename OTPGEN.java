@@ -32,16 +32,14 @@ public class OTPGEN {
 	String keys = upper + lower + number + special;  
 
 	Random r = new Random(); 
-	char[] password = new char[this.length]; 
+	Character[] password = new Character[this.length]; 
 
 	for ( int i = 0; i < this.length; i++ ) { 
 	    password[i] = keys.charAt(r.nextInt(keys.length())); 
 	} 
 
-	for ( char key: password) { 
-	    this.otp += key;
-	} 
-    } 	
+	Arrays.stream(password).forEach (key -> this.otp += key); 
+    }
 
     public String getPassword() { 
 	return this.otp; 
