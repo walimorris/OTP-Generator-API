@@ -37,7 +37,6 @@ public class OTPGEN {
 	for ( int i = 0; i < this.length; i++ ) {
             password[i] = keys.charAt(r.nextInt(keys.length()));
         }
-
         try {
             if ( this.otp.equals(null) ) {
                 this.otp = "";
