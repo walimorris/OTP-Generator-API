@@ -34,22 +34,26 @@ public class OTPGEN {
 	Random r = new Random(); 
 	Character[] password = new Character[this.length]; 
 
-	for ( int i = 0; i < this.length; i++ ) { 
-	    password[i] = keys.charAt(r.nextInt(keys.length())); 
-	} 
+	for ( int i = 0; i < this.length; i++ ) {
+            password[i] = keys.charAt(r.nextInt(keys.length()));
+        }
 
-	Arrays.stream(password).forEach (key -> this.otp += key); 
+        try {
+            if ( this.otp.equals(null) ) {
+                this.otp = "";
+            }
+        } catch ( NullPointerException e) {
+            this.otp = "";
+        }
+        Arrays.stream(password).forEach (key -> this.otp += key);
     }
 
-    public String getPassword() { 
-	return this.otp; 
-    } 
+    public String getPassword() {
+        return this.otp;
+    }
 
-    public void setLength(int length) { 
-	this.length = length; 
-    } 
-    
-    public int getLength() { 
-	return this.length; 
-    } 
-}     
+    public int getLength() {
+        return this.length;
+    }
+}
+   
