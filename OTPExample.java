@@ -1,15 +1,11 @@
 public class OTPExample { 
     public static void main(String[] args) {
 	OTPGEN password1 = new OTPGEN(10); 
-	OTPGEN password2 = new OTPGEN();
+	OTPGEN password2 = new OTPGEN(14);
         int passwordLength1 = password1.getLength();
         int passwordLength2 = password2.getLength(); 	
         System.out.println("Password Length 1: " + passwordLength1);
         System.out.println("Password Length 2: " + passwordLength2); 
-
-        // set password2 length to 12
-	password2.setLength(12); 
-        System.out.println("Password2's new length: " + password2.getLength()); 
 
         // Generate a new password, a new password will be generated every time 
 	password1.generatePassword(); 
