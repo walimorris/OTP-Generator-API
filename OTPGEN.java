@@ -19,10 +19,6 @@ public class OTPGEN {
         this.length = length; 
     }
 
-    public OTPGEN() { 
-	this(0); 
-    } 
-
     final public void generatePassword() { 
 	String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
         String lower = "abcdefghijklmnopqrstuvwxyz"; 
