@@ -15,7 +15,7 @@ public class OTPGEN {
     private int length; 
 
     public OTPGEN(int length) { 
-	this.otp = ""; 
+	this.otp = null; 
         this.length = length; 
     }
 
