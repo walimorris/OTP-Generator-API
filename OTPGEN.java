@@ -42,7 +42,7 @@ public class OTPGEN {
 	Character[] password = new Character[this.length]; 
 
 	/* Keys is a String containing all special characters from character loop up table. Iterate a loop from 
-	 * 1 - length of desired OTP. Select a random character and append to the password arround */ 
+	 * 1 - length of desired OTP. Select a random character and append to the password array */ 
 	for ( int i = 0; i < this.length; i++ ) {
             password[i] = keys.charAt(r.nextInt(keys.length()));
         }
@@ -72,4 +72,3 @@ public class OTPGEN {
         return this.length;
     }
 }
-   
