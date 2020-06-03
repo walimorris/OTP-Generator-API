@@ -31,6 +31,7 @@ public class OTPGEN {
         String number = "0123456789"; 
         String special = "`~!@#$%^&*+=-/><";
 
+	/* Creates a String containing all characters from key lookup table */ 
 	String keys = upper + lower + number + special;  
         
 	/**
@@ -40,17 +41,20 @@ public class OTPGEN {
 	Random r = new Random(); 
 	Character[] password = new Character[this.length]; 
 
+	/* Keys is a String containing all special characters from character loop up table. Iterate a loop from 
+	 * 1 - length of desired OTP. Select a random character and append to the password arround */ 
 	for ( int i = 0; i < this.length; i++ ) {
             password[i] = keys.charAt(r.nextInt(keys.length()));
         }
-        try { // Will attempt to throw null exception, generate an empty password String to begin adding chars
+        try { 
+	    /* Will attempt to throw null exception, generate an empty password String to begin adding chars */ 
             if ( this.otp.equals(null) ) {
                 this.otp = "";
             }
         } catch ( NullPointerException e) {
             this.otp = "";
         }
-	/* Appends each character to OTP */ 
+	/* Appends each character from password aroudn to randomly generated OTP */ 
         Arrays.stream(password).forEach (key -> this.otp += key);
     }
     
